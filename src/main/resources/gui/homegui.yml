@@ -1,0 +1,7 @@
+title: "Homes"
+size: 54
+# Items defined by slot: material, name, lore...
+items:
+  0:
+    material: "ENDER_PEARL"
+    name: "&aTeleport"

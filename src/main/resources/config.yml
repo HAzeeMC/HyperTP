@@ -1,0 +1,11 @@
+# HyperTP configuration
+language: en
+rtp:
+  range: 1000
+  cooldown: 60
+cooldowns:
+  home: 10
+  tpa: 30
+  back: 5
+gui:
+  open-cooldown: 2

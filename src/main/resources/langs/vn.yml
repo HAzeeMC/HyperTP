@@ -1,0 +1,4 @@
+messages:
+  only_players: "&cChỉ dành cho người chơi."
+  home_set: "&aHome &f{home} &ađã được đặt."
+  home_deleted: "&aHome &f{home} &ađã bị xóa."

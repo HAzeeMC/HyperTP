@@ -1,0 +1,32 @@
+name: HyperTP
+main: com.hazee.hypertp.HyperTP
+version: 1.0.0
+api-version: 1.21
+author: H_Azee
+commands:
+  sethome:
+    description: Set a home
+  home:
+    description: Teleport to home
+  delhome:
+    description: Delete a home
+  homelist:
+    description: List homes
+  tpa:
+    description: Send teleport request
+  tpahere:
+    description: Request player to teleport to you
+  tpaccept:
+    description: Accept teleport request
+  tpdeny:
+    description: Deny teleport request
+  back:
+    description: Return to previous location
+  rtp:
+    description: Random teleport
+  htp:
+    description: HyperTP admin
+permissions:
+  hypertp.admin:
+    description: admin for hypertp
+    default: op

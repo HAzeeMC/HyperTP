@@ -1,0 +1,20 @@
+package com.hazee.hypertp.model;
+
+import java.util.UUID;
+import org.bukkit.Location;
+
+public class Home {
+    private final UUID owner;
+    private final String name;
+    private final Location location;
+
+    public Home(UUID owner, String name, Location location) {
+        this.owner = owner;
+        this.name = name;
+        this.location = location;
+    }
+
+    public UUID getOwner() { return owner; }
+    public String getName() { return name; }
+    public Location getLocation() { return location; }
+}

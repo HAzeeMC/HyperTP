@@ -1,0 +1,4 @@
+messages:
+  only_players: "&cOnly players."
+  home_set: "&aHome &f{home} &ahas been set."
+  home_deleted: "&aHome &f{home} &adeleted."
