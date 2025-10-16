@@ -1,0 +1,52 @@
+name: Build HyperTP Plugin
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    name: Build with Maven
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout source
+        uses: actions/checkout@v4
+
+      - name: ☕ Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: 🧱 Build with Maven
+        run: mvn -B clean package --file pom.xml
+
+      - name: 📁 Upload plugin artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HyperTP
+          path: target/*.jar
+
+  verify:
+    name: Verify Build
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Download built JAR
+        uses: actions/download-artifact@v4
+        with:
+          name: HyperTP
+          path: ./build
+
+      - name: 🧩 Verify plugin.yml
+        run: |
+          echo "Verifying plugin.yml exists inside JAR..."
+          jar tf ./build/*.jar | grep plugin.yml || (echo "❌ plugin.yml not found!" && exit 1)
+          echo "✅ Verification passed!"
